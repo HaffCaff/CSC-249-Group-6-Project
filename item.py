@@ -4,6 +4,10 @@ class Item(object):
     def __init__(self):
         self.name = ""
         self.cookTime = 0
+
+    def __init__(self, inputName, inputTime):
+        self.name = inputName
+        self.cookTime = inputTime
     
     #Setters
     def setName(self, name):
