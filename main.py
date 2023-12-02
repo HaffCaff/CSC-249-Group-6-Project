@@ -1,11 +1,8 @@
-from Order import Order
+from listqueue import ListQueue
 from item import Item
 
-
-def main():
-    
-    #Basic Menu Concept
-    print("Welcome to INSERT NAME HERE")
+def menu():
+    print("Welcome to Wake Cafeteria")
     print()
     print("Press 1 for OPTION")
     print("Press 2 for OPTION")
@@ -13,20 +10,26 @@ def main():
     print("Press 4 for OPTION")
     print("Press 5 to EXIT")
     option = input("What can we do for you?")
-    
-    while input != "5":
+
+    return option
+
+def main():
+    orderList = ListQueue()
+
+    option = menu()
+    while option != "5":
         if option == "1":
-            #Do the thing
+            Burger = Item("Burger", 5)
+            orderList.add(Burger)
+        elif option == "2":
             pass
-        if option == "2":
-            #Do the thing
+        elif option == "3":
             pass
-        if option == "3":
-            #Do the thing
+        elif option == "4":
             pass
-        if option == "4":
-            #Do the thing
+        elif option == "5":
             pass
+        option = menu()
 
     #Do we want to also have a people queue? So people can see the wait time to get a table?
     # Maybe I am just deleriously tired, just need to upload this to GH
@@ -44,7 +47,6 @@ def main():
     # orders.addToQ(burger)
 
     #print(orders)
-    pass
 
 
 
