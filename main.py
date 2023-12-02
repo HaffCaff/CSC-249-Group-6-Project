@@ -6,12 +6,13 @@ from prepare import prepare
 def menu():
     print("Welcome to Wake Cafeteria: What would you like to order?")
     print()
-    print("Press 1 to Order a Burger Combo")
-    print("Press 2 To Order a Wing Combo")
-    print("Press 3 To Order a Salad Combo")
-    print("Press 4 to See Order Queue")
-    print("Press 5 to Place your order")
-    print("Press 6 to EXIT")
+    print("Press 1 to Order a burger Combo.")
+    print("Press 2 To Order a wing Combo.")
+    print("Press 3 To Order a salad Combo.")
+    print("Press 4 to See the order Queue.")
+    print("Press 5 to Clear the order queue.")
+    print("Press 6 to Place your order.")
+    print("Press 7 to EXIT")
     option = input("Enter Option: ")
     print()
 
@@ -27,7 +28,7 @@ def main():
     orderList = ListQueue()
 
     option = menu()
-    while option != "6":
+    while option != "7":
         if option == "1":
             orderList.add(Burger)
             orderList.add(Fries)
@@ -46,6 +47,10 @@ def main():
             print(f"Your order contains {orderList}, totaling {len(orderList)} items for ${orderList.getOrderCost():.2f}")
             print()
         elif option == "5":
+            orderList.clear()
+            print(f"Order has been cleared")
+            print()
+        elif option == "6":
             prepare(orderList)
         option = menu()
 

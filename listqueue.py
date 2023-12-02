@@ -80,7 +80,7 @@ class ListQueue(object):
 
     # Project Specific Methods
 
-    def getOrderCost(self):  # Puts the item in the queue
+    def getOrderCost(self):  # Get total cost of order
         total = 0
         for items in self.items:
             total += items.getCost()
