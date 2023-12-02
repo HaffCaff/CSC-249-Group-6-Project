@@ -5,7 +5,6 @@ from prepare import prepare
 
 def menu():
     print("Welcome to Wake Cafeteria: What would you like to order?")
-    print()
     print("Press 1 to Order a burger Combo.")
     print("Press 2 To Order a wing Combo.")
     print("Press 3 To Order a salad Combo.")
@@ -34,24 +33,35 @@ def main():
             orderList.add(Fries)
             orderList.add(Drink)
             print("Added a Burger combo to your order")
+            print()
         elif option == "2":
             orderList.add(Wings)
             orderList.add(Fries)
             orderList.add(Drink)
             print("Added a Wing combo to your order")
+            print()
         elif option == "3":
             orderList.add(Salad)
             orderList.add(Drink)
             print("Added a Salad combo to your order")
-        elif option == "4":
-            print(f"Your order contains {orderList}, totaling {len(orderList)} items for ${orderList.getOrderCost():.2f}")
             print()
+        elif option == "4":
+            if orderList.isEmpty():
+                print("You have not added any items, please add an item to view your order!")
+                print()
+            else:
+                print(f"Your order contains {orderList}, totaling {len(orderList)} items for ${orderList.getOrderCost():.2f}")
+                print()
         elif option == "5":
             orderList.clear()
             print(f"Order has been cleared")
             print()
         elif option == "6":
-            prepare(orderList)
+            if orderList.isEmpty():
+                print("There are no items to place an order for, please add items to your order!")
+                print()
+            else:
+                prepare(orderList)
         option = menu()
 
 
