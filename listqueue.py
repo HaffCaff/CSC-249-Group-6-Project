@@ -3,10 +3,11 @@ File: listqueue.py
 A list-based implementation of stacks.
 """
 
+
 class ListQueue(object):
 
     # Constructor
-    def __init__(self, sourceCollection = None):
+    def __init__(self, sourceCollection=None):
         """Sets the initial state of self, which includes the
         contents of sourceCollection, if it's present."""
         self.items = []
@@ -18,14 +19,14 @@ class ListQueue(object):
     def isEmpty(self):
         """Returns True if the queue is empty, or False otherwise."""
         return len(self) == 0
-    
+
     def __len__(self):
         """Returns the number of items in the queue."""
         return len(self.items)
 
     def __str__(self):
         """Returns the string representation of the queue."""
-        return "{" + ", ".join(map(str, self)) + "}"
+        return "{" + ", ".join(map(str, self.items)) + "}"
 
     def __iter__(self):
         """Supports iteration over a view of the queue."""
@@ -76,45 +77,47 @@ class ListQueue(object):
         except IndexError:
             return "Queue is empty"
 
+    # Project Specific Methods
 
+    def getOrderCost(self):  # Puts the item in the queue
+        total = 0
+        for items in self.items:
+            total += items.cost
+        return total
 
-def main():
-    lyst = [8, 2, 4, 7, 6, 1]
-    print("The list of items added is:", lyst)
-    b = ListQueue(lyst)
-    print("The queue's size:", len(b))
-    print("The queue's string:", b)
-    print()
+# def main():
+#     lyst = [8, 2, 4, 7, 6, 1]
+#     print("The list of items added is:", lyst)
+#     b = ListQueue(lyst)
+#     print("The queue's size:", len(b))
+#     print("The queue's string:", b)
+#     print()
 
-    print("Add 5")
-    b.add(5)
-    print("The queue's string:", b)
-    print()
-    print("Peek")
-    print("Item at front of the queue:", b.peek())
-    print("The queue's string:", b)
-    print()
-    print("Pop")
-    print("Item popped:", b.pop())
-    print("The queue's string:", b)
-    print()
-    print("c = ListQueue(b)")
-    c = ListQueue(b)
-    print("b == c?", b == c)
-    print()
-    print("d = ListQueue([1, 2, 3, 4, 5, 6])")
-    d = ListQueue([1, 2, 3, 4, 5, 6])
-    print("b == d?", b == d)
-    print()
-    print("e = b + d")
-    e = b + d
-    print("Queue e's string:", e)
-    print("Is e empty?", e.isEmpty())
-    e.clear()
-    print("Clear e")
-    print("Is e empty?", e.isEmpty())
-    print("The queue's string:", e)
-
-
-if __name__ == "__main__":
-    main()
+#     print("Add 5")
+#     b.add(5)
+#     print("The queue's string:", b)
+#     print()
+#     print("Peek")
+#     print("Item at front of the queue:", b.peek())
+#     print("The queue's string:", b)
+#     print()
+#     print("Pop")
+#     print("Item popped:", b.pop())
+#     print("The queue's string:", b)
+#     print()
+#     print("c = ListQueue(b)")
+#     c = ListQueue(b)
+#     print("b == c?", b == c)
+#     print()
+#     print("d = ListQueue([1, 2, 3, 4, 5, 6])")
+#     d = ListQueue([1, 2, 3, 4, 5, 6])
+#     print("b == d?", b == d)
+#     print()
+#     print("e = b + d")
+#     e = b + d
+#     print("Queue e's string:", e)
+#     print("Is e empty?", e.isEmpty())
+#     e.clear()
+#     print("Clear e")
+#     print("Is e empty?", e.isEmpty())
+#     print("The queue's string:", e)

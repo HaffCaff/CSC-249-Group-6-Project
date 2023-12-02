@@ -1,24 +1,34 @@
 class Item(object):
 
-    #Deafult contructor
+    # Deafult contructor
     def __init__(self):
         self.name = ""
+        self.cost = 0.0
         self.cookTime = 0
 
-    def __init__(self, inputName, inputTime):
+    def __init__(self, inputName, inputTime, inputCost):
         self.name = inputName
         self.cookTime = inputTime
-    
-    #Setters
+        self.cost = inputCost
+
+    # Setters
     def setName(self, name):
         self.name = name
-    
+
     def setCookTime(self, time):
         self.cookTime = time
 
-    #Getters
+    def setCost(self, cost):
+        self.cost = cost
+
+    # Getters
     def getName(self):
         return self.name
-    
+
     def getCookTime(self):
         return self.cookTime
+
+    # Override toString, to allow printing
+    def __str__(self):
+        """Returns the string representation of the queue."""
+        return "%s" % self.name
