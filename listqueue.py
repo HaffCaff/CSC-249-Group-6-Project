@@ -1,7 +1,7 @@
 """
 File: listqueue.py
 A list-based implementation of queue
-Extedned for Project
+Extended for Project
 """
 
 

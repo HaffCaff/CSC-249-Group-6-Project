@@ -1,3 +1,7 @@
+"""
+File: item.py
+Item class and all relevant methods
+"""
 class Item(object):
 
     # Deafult contructor

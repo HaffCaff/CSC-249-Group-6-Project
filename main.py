@@ -1,3 +1,7 @@
+"""
+File: main.py
+Main Driver function to handle running of program
+"""
 from listqueue import ListQueue
 from item import Item
 from prepare import prepare
