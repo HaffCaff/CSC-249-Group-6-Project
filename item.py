@@ -28,6 +28,9 @@ class Item(object):
     def getCookTime(self):
         return self.cookTime
 
+    def getCost(self):
+        return self.cost
+
     # Override toString, to allow printing
     def __str__(self):
         """Returns the string representation of the queue."""

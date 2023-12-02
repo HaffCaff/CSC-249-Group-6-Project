@@ -1,5 +1,6 @@
 from listqueue import ListQueue
 from item import Item
+from prepare import prepare
 
 
 def menu():
@@ -31,18 +32,21 @@ def main():
             orderList.add(Burger)
             orderList.add(Fries)
             orderList.add(Drink)
+            print("Added a Burger combo to your order")
         elif option == "2":
             orderList.add(Wings)
             orderList.add(Fries)
             orderList.add(Drink)
+            print("Added a Wing combo to your order")
         elif option == "3":
             orderList.add(Salad)
             orderList.add(Drink)
+            print("Added a Salad combo to your order")
         elif option == "4":
             print(f"Your order contains {orderList}, totaling {len(orderList)} items for ${orderList.getOrderCost():.2f}")
             print()
         elif option == "5":
-            pass
+            prepare(orderList)
         option = menu()
 
 

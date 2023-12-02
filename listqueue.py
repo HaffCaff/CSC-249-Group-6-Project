@@ -1,6 +1,7 @@
 """
 File: listqueue.py
-A list-based implementation of stacks.
+A list-based implementation of queue
+Extedned for Project
 """
 
 
@@ -82,7 +83,7 @@ class ListQueue(object):
     def getOrderCost(self):  # Puts the item in the queue
         total = 0
         for items in self.items:
-            total += items.cost
+            total += items.getCost()
         return total
 
 # def main():
