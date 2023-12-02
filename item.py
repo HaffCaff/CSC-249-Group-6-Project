@@ -2,9 +2,11 @@
 File: item.py
 Item class and all relevant methods
 """
+
+
 class Item(object):
 
-    # Deafult contructor
+    # Default constructor
     def __init__(self):
         self.name = ""
         self.cost = 0.0

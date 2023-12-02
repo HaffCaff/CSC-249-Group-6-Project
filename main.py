@@ -23,6 +23,7 @@ def menu():
 
 
 def main():
+    # Food Item Declarations
     Burger = Item("Burger", 5, 5.50)
     Wings = Item("Wings", 10, 9.00)
     Salad = Item("Salad", 3, 7.00)
@@ -54,7 +55,8 @@ def main():
                 print("You have not added any items, please add an item to view your order!")
                 print()
             else:
-                print(f"Your order contains {orderList}, totaling {len(orderList)} items for ${orderList.getOrderCost():.2f}")
+                print(
+                    f"Your order contains {orderList}, totaling {len(orderList)} items for ${orderList.getOrderCost():.2f}")
                 print()
         elif option == "5":
             orderList.clear()
