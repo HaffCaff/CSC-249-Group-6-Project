@@ -68,6 +68,9 @@ def main():
                 print()
             else:
                 prepare(orderList)
+        else:
+            print("Invalid option. Please choose an option from the menu")
+            print()
         option = menu()
 
 
